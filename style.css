@@ -1,0 +1,170 @@
+/* GENERAL STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: #2b3b37;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+}
+
+/* General styles media queries */
+
+@media (max-width:430px) {
+    h1 {
+        margin-bottom: 30px;
+        font-size: 1.5rem;
+    }
+}
+
+/* MOVIE CONTAINER */
+
+.movie-container {
+    color: white;
+}
+
+.movie-container label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.movie-container select {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+/* Movie container media queries */
+
+@media (max-width: 430px) {
+    .movie-container label, .movie-container select {
+     display: block;
+     margin: 0 auto;
+    }
+
+    .movie-container label {
+        text-align: center;
+        margin: 15px 0;
+    }
+}
+
+/* SEATS DISPLAY & SEAT */
+
+.seats-display {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 25px 0;
+}
+
+.seats-display li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+}
+
+.seats-display li div {
+    margin-right: 10px;
+}
+
+.seats-display small {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.seat {
+    width: 15px;
+    height: 15px;
+    background: #86bdaf;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+/* Make seats grow when hovering */
+.seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/* Avoid seats display from growing when hovering */
+.seats-display .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+.seat.selected {
+    background: #d7f037;
+}
+
+.seat.occupied {
+    background: #e61c1c;
+}
+
+.seat:nth-of-type(3) {
+    margin-right: 20px;
+}
+
+.seat:nth-last-child(3) {
+    margin-left: 20px;
+}
+
+/* Seats display media queries */
+
+@media(max-width: 430px) {
+    .seats-display {
+        padding: 5px 5px;
+    }
+}
+
+/* SEATS CONTAINER, SCREEN, ROW & TEXT */
+
+.seats-container {
+    /* aplly 3d effect on screen */
+    perspective: 1000px;
+}
+
+.screen {
+    background: white;
+    height: 100px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.row {
+    display: flex;
+}
+
+p.text {
+    margin: 20px 0;
+    color: white;
+}
+
+p.text span {
+    color: #ffae3b;
+}
